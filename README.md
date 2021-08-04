@@ -1,2 +1,2 @@
 # ikhane-dbg
-excuse ur mouth
+*im depressed*
