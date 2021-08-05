@@ -7,8 +7,9 @@
 The main task is to translate raw memory locations into program objects like *functions, variables, types..* For that, using the following debug info *nlah nlah, I'm lost*:
 
  * location of program functions and global variables
- * stack layout of each function, dependant on the current location of execution whithin a func *(instruction pointer)*
+ * stack layout of each function, dependant on the current location of execution within a func *(instruction pointer)*
     * expressions that evaluate as the locations of local vars and params on eavh func's stack
   * types of vars, which combines with the above debug info, indicate the mem range in which to look for and read a particular var
 
 ## just shit: debugging flow of things I guess I should die
+ 1. identify process to debug: `pid`, *can be retrieved using `pgrep pattern`
