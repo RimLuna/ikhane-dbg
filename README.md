@@ -12,4 +12,4 @@ The main task is to translate raw memory locations into program objects like *fu
   * types of vars, which combines with the above debug info, indicate the mem range in which to look for and read a particular var
 
 ## just shit: debugging flow of things I guess I should die
- 1. identify process to debug: `pid`, *can be retrieved using `pgrep pattern`
+ 1. identify process to debug: `pid`, *can be retrieved using `pgrep pattern`*
