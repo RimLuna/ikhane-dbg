@@ -13,3 +13,7 @@ The main task is to translate raw memory locations into program objects like *fu
 
 ## just shit: debugging flow of things I guess I should die
  1. identify process to debug: `pid`, *can be retrieved using `pgrep pattern`*
+ 2. **ATTACH AND STOP**: pause process execution to extract data from it
+    * using the `ptrace()`:
+      * `PTRACE_ATTACH`: establish tracer-tracee relationship, and more.*(stops target process, allows debugger to read from process mem and registers)*
+      * `PTRACE_DETACH`: reverses attech effects and allows process to continue its execution
