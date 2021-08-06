@@ -17,3 +17,11 @@ The main task is to translate raw memory locations into program objects like *fu
     * using the `ptrace()`:
       * `PTRACE_ATTACH`: establish tracer-tracee relationship, and more.*(stops target process, allows debugger to read from process mem and registers)*
       * `PTRACE_DETACH`: reverses attech effects and allows process to continue its execution
+ 3. extract the data
+    * backtrace of each running thread *(series of calls leading to current executing func beginning with the thread's **start** func)*
+      * list of threads owned by process and their current exec context *(represented by `rip`, `rsp`)*, using `libthread_db` library
+ 4. copy registers
+    * using `ptrace` *(`PTRACE_GETREGS` and `PTRACE_GETFPREGS` actions)* will retrieve copies of the thread's general-purpose registers and floating-point registers
+ 5. **UNWIND**: translate raw addresses and mem values to program elements like func names, symbols..
+    * using the return address to unwind the callstack which depending on where a func execution is, is stored at different *offsets*
+      * this info is organized into a *matrix of offsets* relative to a known register value *(current `rsp` for a range of addresses)*, we can find the matrix by searching for an entry: **Frame Description Entry `FDE`**
